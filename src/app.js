@@ -1,11 +1,6 @@
-var Hello = React.createClass({
+var Component = React.createClass({
 	render: function() {
-		return (
-			<div>
-				<h1>Hello !</h1>
-				<p>This is a simple text.</p>
-			</div>
-		);
+		return <div>My React component.</div>;
 	}
 });
-React.render(<Hello/>,document.body);
+React.render(<Component/>,document.getElementById('react-container'));
