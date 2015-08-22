@@ -1,11 +1,19 @@
-var Hello = React.createClass({
+var Checkbox = React.createClass({
+	getInitialState: function() {
+		return {checked: true}
+	},
+	handleCheck: function() {
+		this.setState({checked: !this.state.checked})
+	},
 	render: function() {
-		return (
-			<div>
-				<h1>Hello !</h1>
-				<p>This is a simple text.</p>
-			</div>
+		var msg;
+		if (this.state.checked) msg = "checked";
+		else msg = "unchecked";
+		return (<div>
+					<input type="checkbox" onChange={this.handleCheck} defaultChecked={this.state.checked}/>
+					<p>This box is {msg}</p>
+				</div>
 		);
 	}
 });
-React.render(<Hello/>,document.body);
+React.render(<Checkbox/>,document.getElementById('react-container'));
