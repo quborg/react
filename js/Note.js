@@ -1,7 +1,27 @@
 var Note = React.createClass({
-	edit: function() { alert('editing note'); },
+	getInitialState: function() { return {editing: false} },
+	edit: function() { this.setState({editing: true}); },
+	save: function() {
+		var val = this.refs.newText.getDOMNode().value;
+		alert("Get new data: "+ val);
+		this.setState({editing: false});
+	},
 	remove: function() { alert('removing note'); },
 	render: function() {
+		if (this.state.editing)
+			return this.renderForm();
+		else
+			return this.renderDisplay();
+	},
+	renderForm: function() {
+		return (
+			<div className="note">
+				<textarea ref="newText" defaultValue={this.props.children} className="form-control"></textarea>
+				<button onClick={this.save} className="btn btn-success btn-sm glyphicon glyphicon-floppy-disk" />
+			</div>
+		)
+	},
+	renderDisplay: function() {
 		return (
 			<div className="note">
 				<p>{this.props.children}</p>
@@ -11,8 +31,7 @@ var Note = React.createClass({
 				</span>
 			</div>
 		);
-	}
+	},
 });
 
-React.render(<Note>Hello World</Note>,
-		document.getElementById('react-container'));
+React.render(<Note>Hello World</Note>, document.getElementById('react-container'));
