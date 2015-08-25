@@ -43,8 +43,26 @@ var Board = React.createClass({
 				return new Error("Creating " + props[propName] + " notes is ridiculous");
 		}
 	},
+	getInitialState: function() {
+		return {
+			notes: [
+				'Call Bill',
+				'Email Lisa',
+				'Make dentist appt',
+				'Send Proposal'
+			]
+		};
+	},
 	render: function() {
-		return <div className="board">{this.props.count}</div>
+		return (
+			<div className="board">
+				{this.state.notes.map(function(note, i){
+					return (
+						<Note key={i}>{note}</Note>
+					);
+				})}
+			</div>
+		);
 	},
 });
 
