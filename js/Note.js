@@ -1,6 +1,10 @@
 var Note = React.createClass({
-	getInitialState: function() { return {editing: false} },
-	edit: function() { this.setState({editing: true}); },
+	getInitialState: function() {
+		return {editing: false}
+	},
+	edit: function() {
+		this.setState({editing: true});
+	},
 	save: function() {
 		this.props.onChange(this.refs.newText.getDOMNode().value, this.props.index);
 		this.setState({editing: false});
@@ -45,14 +49,12 @@ var Board = React.createClass({
 		}
 	},
 	getInitialState: function() {
-		return {
-			notes: [
-				'Call Bill',
-				'Email Lisa',
-				'Make dentist appt',
-				'Send Proposal'
-			]
-		};
+		return { notes: [] };
+	},
+	add: function(text) {
+		var arr = this.state.notes;
+		arr.push(text);
+		this.setState({notes:arr});
 	},
 	update: function(newText, i) {
 		var arr = this.state.notes;
@@ -66,17 +68,14 @@ var Board = React.createClass({
 	},
 	eachNote: function(note, i) {
 		return (
-			<Note key={i}
-				index={i}
-				onChange={this.update}
-				onRemove={this.remove}
-			>{note}</Note>
+			<Note key={i} index={i} onChange={this.update} onRemove={this.remove}>{note}</Note>
 		);
 	},
 	render: function() {
 		return (
 			<div className="board">
 				{this.state.notes.map(this.eachNote)}
+				<button className="btn btn-sm btn-success glyphicon glyphicon-save-file" onClick={this.add.bind(null, "New Note")} />
 			</div>
 		);
 	},
