@@ -3,9 +3,10 @@ This is a work lab on
                                      exercices.
 
 _________________________________________________________
-¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+
 PRODUCTION branch spicies:
-¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+--------------------------------------
+
 We used react-tools to compile html tags to js for Production
 
 $ npm install -g react-tools
@@ -14,9 +15,10 @@ $ jsx src/ build/
 will generate compiled src files to build
 
 _________________________________________________________
-¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+
 Component Life Cycle: Mounting
-¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+------------------------------------------
+
 → getDefaultProps
 → getInitialState
 	// this two called ones and set default both : Props and State
@@ -28,7 +30,8 @@ Component Life Cycle: Mounting
 	// after successful render, we can now access & interact with the dom
 
 Component Life Cycle: Updating
-¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+------------------------------------------
+
 → componentWillReceiveProps
 	// when called component can be updated & receive
 → shouldComponentUpdate
@@ -40,6 +43,7 @@ Component Life Cycle: Updating
 	// Invoked immediately after the component's updates are flushed to the DOM, not called for the initial render
 
 Component Life Cycle: Unmount
-¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+------------------------------------------
+
 → componentWillUnmount
 	// called before component unmounted from the DOM, can help us to clean up dom elements and invalidating timers
