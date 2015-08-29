@@ -1,3 +1,4 @@
-This is a work lab on
-	"Up and Running with React.js with Eve Porcello"
-                                     exercices.
+We used react-tools to compile html tags to js for Production
+$ npm install -g react-tools
+$ jsx src/ build/
+will generate compiled src files to build
