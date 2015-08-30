@@ -15,24 +15,25 @@
 	<body>
 		<script type="text/jsx">
 			var Box = React.createClass( {
-				componentWillMount: function() {
-					alert("component is about to mount");
-				},
-				componentDidMount: function() {
-					alert('component has mounted')
+				getDefaultProps: function() {
+					return {
+						backgroundColor: "blue",
+						height: 200,
+						width: 200,
+					}
 				},
 				render: function() {
-					return <div></div>;
+					return	<div>
+								<div style={this.props}></div>
+								<section style={this.props}></section>
+							</div>;
 				}
 			});
 
 			React.render(<Box />, document.body);
 
-			var getRidOfBox = document.getElementsByTagName('div')[0];
-			getRidOfBox.onclick = function() {
-				React.unmountComponentAtNode(document.body);
-				alert("component is unmounted");
-			}
+
+
 		</script>
 	</body>
 </html>
