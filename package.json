@@ -1,0 +1,23 @@
+{
+  "name": "Notes",
+  "version": "0.0.1",
+  "description": "Up and Running with React.js with Eve Porcello",
+  "main": "Note.js",
+  "scripts": {
+    "start": "open http://localhost:4321 & httpster -p 4321"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/quborg/react.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/quborg/react/issues"
+  },
+  "homepage": "https://github.com/quborg/react",
+  "dependencies": {
+    "httpster": "^1.0.1",
+    "react-tools": "^0.13.3"
+  }
+}

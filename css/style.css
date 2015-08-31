@@ -42,6 +42,10 @@ div.note:active {
     cursor: -webkit-grabbing;
 }
 
+div.note:hover {
+    z-index: 9;
+}
+
 div.note p {
     font-size: 22px;
     padding: 5px;
